@@ -214,7 +214,7 @@ Creación de carpetas compartidas para separar los recursos de cada sucursal y c
 Estructura de carpetas:
 
 ```text
-Shares
+\\DC\
 │
 ├── ARG_BRANCH
 │
@@ -233,47 +233,59 @@ Los permisos se configuraron de la siguiente manera:
 <table width="100%" align="center">
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
+      <img src="https://i.imgur.com/Ee9qI0N.png" >
       <br>
       <em>Organización de los recursos compartidos por sucursal.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
+      <img src="https://i.imgur.com/bE2C003.png" >
       <br>
       <em>Configuración de permisos NTFS.</em>
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="https://i.imgur.com/ESJM8oP.png" >
+      <br>
+      <em>Compartir carpetas y configurar permisos SMB (Full control a "everyone" porque el acceso ya será controlado mediante los permisos NTFS).</em>
+    </td>
+  </tr>
 </table>
+
 Verificación de Acceso
 Se realizaron pruebas desde ambos clientes para comprobar que los usuarios pudieran acceder a los recursos de su sucursal y que el acceso a los recursos de la otra permaneciera restringido.
 
 <table width="100%" align="center">
   <tr>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
+      <img src="https://i.imgur.com/P1qX3fV.png" width="100%">
       <br>
       <em>Acceso autorizado a los recursos de Argentina.</em>
     </td>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
+      <img src="https://i.imgur.com/lfAowcw.png" width="100%">
       <br>
       <em>Acceso restringido a los recursos de Estados Unidos.</em>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
+      <img src="https://i.imgur.com/xI5wYss.png" width="100%">
       <br>
-      <em>Acceso autorizado a los recursos de Estados Unidos.</em>
+      <em>Acceso autorizado para modificar elementos a los admins.</em>
     </td>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
+      <img src="https://i.imgur.com/JrtHwqb.png width="100%">
       <br>
-      <em>Acceso restringido a los recursos de Argentina.</em>
+      <em>Acceso restringido para modificar elementos a las cuentas de user (se intentó guardar el archivo editado).</em>
     </td>
   </tr>
 </table>
 
 ## Conclusiones y problemas encontrados en el lab
+
+No hubo complicaciones mayores, algunos los errores encontrados fueron por no agregar la extensión de los archivos cuando indicabas su nombre (por ejemplo el el GPO de los fondos de pantalla y al seleccionar el archivo de nombres del script de generación). Y otros por herencia de permisos en las carpetas que fueron solucionados rapidamente.
+
+Próximo lab: ### [Endpoint Management with Action1](https://github.com/alexisanunez/endpoint-management-action1). Saludos!
