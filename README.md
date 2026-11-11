@@ -22,7 +22,7 @@ Se organizó el dominio mediante Unidades Organizativas (OU), separando usuarios
 <table width="100%" align="center">
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/jTgg82k.png" width="100%">
+      <img src="https://i.imgur.com/jTgg82k.png" >
       <br>
       <em>Estructura de OUs del dominio.</em>
     </td>
@@ -34,12 +34,17 @@ Se creó la cuenta administrativa a-anunez dentro de la OU _ADMINS y se incorpor
 <table width="100%" align="center">
   <tr>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/VqDNqCL.png" width="100%">
+      <img src="https://i.imgur.com/VqDNqCL.png" >
       <br>
       <em>Creación de la cuenta administrativa y vista del logon name.</em>
     </td>
+  </tr>
+</table>
+
+<table width="100%" align="center">
+  <tr>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/yExLWeR.png" width="100%">
+      <img src="https://i.imgur.com/yExLWeR.png" >
       <br>
       <em>Incorporación del usuario a los grupos necesarios.</em>
     </td>
@@ -66,37 +71,38 @@ El script contempla:
 <table width="100%" align="center">
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/3BOoL1q.png" width="50%">
+      <img src="https://i.imgur.com/3BOoL1q.png" >
       <br>
       <em>Configuración del script de generación de usuarios.</em>
     </td>
-  </tr>
-  <tr>
     <td align="center">
-      <img src="https://i.imgur.com/DoD14fB.png" width="50%">
+      <img src="https://i.imgur.com/87Toz9b.png" >
       <br>
       <em>Archivo CSV utilizado como fuente de datos.</em>
     </td>
   </tr>
+</table>
+
+<table width="100%" align="center">
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/vsgaVob.png" width="50%">
+      <img src="https://i.imgur.com/vsgaVob.png" >
       <br>
       <em>Detección y corrección de conflictos del script, véase que "efernandez" se detecta duplicado debido a combinaciones similares, tambien ya hay un "lmessi" creado en AD, por lo que agregué uno más a la lista de generación e incluso un "Leonardo Messi" para verificar el funcionamiento de detección de duplicados.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/FFNVk68.png" width="50%">
+      <img src="https://i.imgur.com/FFNVk68.png" >
       <br>
       <em>Resultado de la ejecución del script con los nombres corregidos automaticamente.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/c7MJw1s.png" width="50%">
+      <img src="https://i.imgur.com/c7MJw1s.png" >
       <br>
-      <em>Registro de operaciones y validaciones.</em>
+      <em>Log file generado luego del proceso de creación de usuarios.</em>
     </td>
   </tr>
 </table>
@@ -109,12 +115,12 @@ El script contempla:
 <table width="100%" align="center">
   <tr>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/QEFLjEu.png" width="100%">
+      <img src="https://i.imgur.com/QEFLjEu.png" >
       <br>
       <em>Grupos globales para ambas sucursales.</em>
     </td>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/iHuHdC5.png" width="100%">
+      <img src="https://i.imgur.com/iHuHdC5.png" >
       <br>
       <em>Membresía de un grupo de seguridad.</em>
     </td>
@@ -133,12 +139,12 @@ Creación de GPOs para asignar fondos de escritorio diferenciados a usuarios de 
 <table width="100%" align="center">
   <tr>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/crGvr3F.png"" width="100%">
+      <img src="https://i.imgur.com/crGvr3F.png" >
       <br>
       <em>GPOs linkeadas en sus respectivas OUs.</em>
     </td>
     <td align="center" width="50%">
-      <img src="https://i.imgur.com/HTuUDoo.png" width="100%">
+      <img src="https://i.imgur.com/HTuUDoo.png" >
       <br>
       <em>Configuración de la política de wallpaper.</em>
     </td>
@@ -150,7 +156,7 @@ Creación de GPOs para asignar fondos de escritorio diferenciados a usuarios de 
 <table width="100%" align="center">
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
+      <img src="https://i.imgur.com/27hk1Oj.png" >
       <br>
       <em>Verificación de las políticas aplicadas.</em>
     </td>
@@ -166,35 +172,35 @@ Las restricciones se implementaron mediante GPO y grupos globales de seguridad.
 <table width="100%" align="center">
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/VvAqgZf.png" width="100%">
+      <img src="https://i.imgur.com/VvAqgZf.png" >
       <br>
       <em>Ubicación de los clientes en AD, en este caso los tengo en "Action1 Deployment".</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/rRvJ2dO.png" width="100%">
+      <img src="https://i.imgur.com/rRvJ2dO.png" >
       <br>
       <em>Vinculación de la GPO a la OU de los equipos de la sucursal.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/fKV94Bl.png" width="100%">
+      <img src="https://i.imgur.com/fKV94Bl.png" >
       <br>
       <em>Configuración de la restricción de inicio de sesión local.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/AVOv0sr.png" width="100%">
+      <img src="https://i.imgur.com/AVOv0sr.png" >
       <br>
       <em>Verificación de la GPO aplicada.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.imgur.com/uoBmhsy.png" width="100%">
+      <img src="https://i.imgur.com/uoBmhsy.png" >
       <br>
       <em>Verificación de las restricciones de inicio de sesión.</em>
     </td>
