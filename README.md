@@ -50,14 +50,14 @@ Se creó la cuenta administrativa a-anunez dentro de la OU _ADMINS y se incorpor
 
 ### Creación del archivo CSV con los nombres de los usuarios a generar
 
-Para los archivos CSV con los nombres decidí descargar las listas jugadores de la selección de fútbol respectiva al país de cada branch (en este caso Argentina y Estados Unidos). Y utilicé la IA para crear el formato del archivo necesario para el script de una manera eficiente y con el menor riesgo de error posible.
+Para los archivos CSV con los nombres decidí descargar las listas jugadores de la selección de fútbol respectiva al país de cada branch (en este caso Argentina y Estados Unidos). Y utilicé la IA para crear el formato del archivo necesario para el script (nombres y apellidos separados por una coma, en otros idiomas puede ser confuso) de una manera eficiente y con el menor riesgo de error posible.
 
 ### Desarrollo de un script de PowerShell para automatizar la creación de usuarios en Active Directory a partir de archivos CSV.
 
 El script contempla:
 
 - Importación de usuarios desde archivos CSV.
-- Generación y normalización automática de nombres de usuario.
+- Generación y normalización automática de nombres de usuario (utiliza la primera letra del nombre + apellido completo, por ej. Lionel Messi = lmessi).
 - Detección de conflictos en sAMAccountName y UPN.
 - Control de nombres duplicados y modificación de identificadores cuando es necesario.
 - Selección configurable del archivo CSV y OU de destino.
@@ -68,7 +68,7 @@ El script contempla:
     <td align="center">
       <img src="https://i.imgur.com/3BOoL1q.png" width="50%">
       <br>
-      <em>Script de automatización de usuarios de Active Directory.</em>
+      <em>Configuración del script de generación de usuarios.</em>
     </td>
   </tr>
   <tr>
@@ -82,14 +82,14 @@ El script contempla:
     <td align="center">
       <img src="https://i.imgur.com/vsgaVob.png" width="50%">
       <br>
-      <em>Detección y corrección de conflictos del script.</em>
+      <em>Detección y corrección de conflictos del script, véase que "efernandez" se detecta duplicado debido a combinaciones similares, tambien ya hay un "lmessi" creado en AD, por lo que agregué uno más a la lista de generación e incluso un "Leonardo Messi" para verificar el funcionamiento de detección de duplicados.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img src="https://i.imgur.com/FFNVk68.png" width="50%">
       <br>
-      <em>Resultado de la ejecución del script.</em>
+      <em>Resultado de la ejecución del script con los nombres corregidos automaticamente.</em>
     </td>
   </tr>
   <tr>
@@ -135,7 +135,7 @@ Creación de GPOs para asignar fondos de escritorio diferenciados a usuarios de 
     <td align="center" width="50%">
       <img src="https://i.imgur.com/crGvr3F.png"" width="100%">
       <br>
-      <em>Directivas de grupo para personalización de escritorios.</em>
+      <em>GPOs linkeadas en sus respectivas OUs.</em>
     </td>
     <td align="center" width="50%">
       <img src="https://i.imgur.com/HTuUDoo.png" width="100%">
@@ -166,7 +166,7 @@ Las restricciones se implementaron mediante GPO y grupos globales de seguridad.
 <table width="100%" align="center">
   <tr>
     <td align="center">
-      <img src="¿https://i.imgur.com/VvAqgZf.png" width="100%">
+      <img src="https://i.imgur.com/VvAqgZf.png" width="100%">
       <br>
       <em>Ubicación de los clientes en AD, en este caso los tengo en "Action1 Deployment".</em>
     </td>
@@ -175,7 +175,7 @@ Las restricciones se implementaron mediante GPO y grupos globales de seguridad.
     <td align="center">
       <img src="https://i.imgur.com/rRvJ2dO.png" width="100%">
       <br>
-      <em>Vinculación de la política a los equipos de la sucursal.</em>
+      <em>Vinculación de la GPO a la OU de los equipos de la sucursal.</em>
     </td>
   </tr>
   <tr>
@@ -189,7 +189,7 @@ Las restricciones se implementaron mediante GPO y grupos globales de seguridad.
     <td align="center">
       <img src="https://i.imgur.com/AVOv0sr.png" width="100%">
       <br>
-      <em>Verificación de la directiva aplicada.</em>
+      <em>Verificación de la GPO aplicada.</em>
     </td>
   </tr>
   <tr>
@@ -227,39 +227,43 @@ Los permisos se configuraron de la siguiente manera:
 <table width="100%" align="center">
   <tr>
     <td align="center">
+      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
       <br>
       <em>Organización de los recursos compartidos por sucursal.</em>
     </td>
   </tr>
   <tr>
     <td align="center">
+      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
       <br>
       <em>Configuración de permisos NTFS.</em>
     </td>
   </tr>
 </table>
-
-### Verificación de Acceso
-
+Verificación de Acceso
 Se realizaron pruebas desde ambos clientes para comprobar que los usuarios pudieran acceder a los recursos de su sucursal y que el acceso a los recursos de la otra permaneciera restringido.
 
 <table width="100%" align="center">
   <tr>
     <td align="center" width="50%">
+      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
       <br>
       <em>Acceso autorizado a los recursos de Argentina.</em>
     </td>
     <td align="center" width="50%">
+      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
       <br>
       <em>Acceso restringido a los recursos de Estados Unidos.</em>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
+      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
       <br>
       <em>Acceso autorizado a los recursos de Estados Unidos.</em>
     </td>
     <td align="center" width="50%">
+      <img src="https://i.imgur.com/27hk1Oj.png" width="100%">
       <br>
       <em>Acceso restringido a los recursos de Argentina.</em>
     </td>
